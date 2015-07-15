@@ -9,6 +9,21 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBOutlet weak var ageInputTextField: UITextField!
+    @IBOutlet weak var resultLabel: UILabel!
+    
+    @IBAction func findAge(sender: AnyObject) {
+        
+        let enteredAge = Int(self.ageInputTextField.text!)
+        
+        if (enteredAge == nil) {
+            
+            self.resultLabel.text = "Please enter something"
+            return
+        }
+        self.resultLabel.text = "Your cat is \(enteredAge!*7) in cat years"
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
